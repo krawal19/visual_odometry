@@ -40,7 +40,7 @@ fx, fy, cx, cy, Gcameraimage, LUT=ReadCameraModel(‘./model’)
 Undistorted_image = UndistortImage(original_image,LUT)
 ```
 <p align="center">
-<img src="images_for_readme/undist_image.png">
+<img src="images_for_readme/undist_image.PNG">
 </p>
 
 
@@ -56,7 +56,7 @@ matches = bf.match(des1, des2)
 2. We then extract the points from the matches and store them in separate arrays. They are the forwarded to find the Fundamental Matrix.
 
 <p align="center">
-<img src="images_for_readme/corr_image.png">
+<img src="images_for_readme/corr_image.PNG">
 </p>
 
 #### Fundamental Matrix
@@ -67,11 +67,11 @@ matches = bf.match(des1, des2)
 #### A) 8-Point Algorithm
 1. We know that a correct Fundamental Matrix will verify the correct correspondence of the feature points. Thus, the following equation will be satisfied. Where F is fundamental matrix, x is the feature point array in image1 and x’ is a point array in image 2.
 <p align="center">
-<img src="images_for_readme/eq_1.png">
+<img src="images_for_readme/eq_1.PNG">
 </p>
 2. So, we select 8 random feature points to form the arrays x and x’. We require a minimum of 8 points because the F matrix is 3x3 matrix with 9 parameters. Thus,to obtain a unique solution, we require a minimum of 8 points.
 <p align="center">
-<img src="images_for_readme/eq_2.png">
+<img src="images_for_readme/eq_2.PNG">
 </p> 
 3. To solve for F matrix parameters,we find the SVD and select the last column of the V matrix. Thus, we obtain the F matrix parameter.
 4. The we know that the system should have a rank = 2. This is because the F matrix only determines the translation motion of the key-points. Thus, we enforce the F matrix to be of rank 2 by making the last element F[2,2] = 0.
@@ -85,7 +85,7 @@ matches = bf.match(des1, des2)
 2. Thus,by repeating this process for a specific number of times, we select the Fundamental Matrix that produces the highest number of inliers.•This method will improve the F Matrix generation as it makes sure the resultant F matrix has high number of inliers.
 3. The inliers are determined by the following equation where the inliers will have the value very close to zero and this will be compared by a threshold value.
 <p align="center">
-<img src="images_for_readme/eq_3.png">
+<img src="images_for_readme/eq_3.PNG">
 </p>
 
 #### PROBLEMS:
@@ -96,7 +96,7 @@ matches = bf.match(des1, des2)
 ##### C) ROBUST FUNDAMENTAL MATRIX ESTIMATION (BY ZHANG)
 1. In the following method we divide the image in 8x8 grids as shown below.
 <p align="center">
-<img src="images_for_readme/zhang.png">
+<img src="images_for_readme/zhang.PNG">
 </p>
 
 2. Then, we select randomly a grid and the select a point from the grid randomly. Also, we make sure that no grids are repeated if other options are available.
@@ -121,7 +121,7 @@ E1 = findEssentialMatrix(fmatrix, calibrationMatrix, calibrationMatrix.T)5)
 #### E) Calculating the Camera Poses
 1. The camera poses is calculated from the essential matrix using the following formula.
 <p align="center">
-<img src="images_for_readme/pose_eq.png">
+<img src="images_for_readme/pose_eq.PNG">
 </p>
 2. When the determinant of the rotation matrix is less then zero the we make the following correction to the matrices.
 <p align="center">
