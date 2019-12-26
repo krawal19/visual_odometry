@@ -1,4 +1,4 @@
-<h1 align=center> Visual odometery </h1>
+<h1 align=center> Visual odometry </h1>
 <p align="center">
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
@@ -24,7 +24,7 @@ The ARTag detection and Tracking package requires following dependencies.
 - OpenCV 4.0.0
 
 ## Operation
-#### The pipeline for Visual Odometery is as follows:
+#### The pipeline for Visual Odometry is as follows:
 #### A) Data Preparation
 1. Theinput images given to me was in the Bayer Format which we converted to the color images usingfollowing command.
 ```
